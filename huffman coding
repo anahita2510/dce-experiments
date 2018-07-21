@@ -1,0 +1,26 @@
+clc // clears the screen
+n=input("enter number of probabilities")// the number of inputs is accepted from the user and stored in the variable n
+mprintf("enter the probabilities") // display
+p=zeros(n)// creates a zero matrix
+for i=1:n // runs a for loop from 1 to n
+    p(i)=input("") //each value entered is stored in p(i)
+end
+mprintf("enter length of code")// display
+x=zeros(n)
+for i=1:n
+    x(i)=input("" )
+end
+h=0 // the value of h and l is initialised as 0
+l=0
+for m=1:n
+    h=h+p(m)*log2(1/p(m)) // entropy value is calculated
+end
+disp(h, "Entropy=")
+for i=1:n
+    l=l+p(m)*x(m) // average code word length is calculated
+end
+disp(l, "Average codeword length=")
+e=100*h/l // efficiency is calculated
+r=100-e // redundacny is calculated
+disp(e,"efficiency of code=")
+disp(r,"redundancy of code=")
